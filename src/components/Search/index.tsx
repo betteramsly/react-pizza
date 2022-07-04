@@ -1,42 +1,42 @@
-import React from 'react'
-import debounce from 'lodash.debounce'
-import styles from './Search.module.scss'
-import { useDispatch } from 'react-redux'
-import { setSearchValue } from '../../redux/filter/slice'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import debounce from 'lodash.debounce';
 
-const Search: React.FC = () => {
-  const dispatch = useDispatch()
-  const [value, setValue] = React.useState('')
-  const inputRef = React.useRef<HTMLInputElement>(null)
+import styles from './Search.module.scss';
+import { setSearchValue } from '../../redux/filter/slice';
+
+export const Search: React.FC = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = React.useState<string>('');
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickClear = () => {
-    dispatch(setSearchValue(''))
-    setValue('')
-      inputRef.current?.focus()
-  }
+    dispatch(setSearchValue(''));
+    setValue('');
+    inputRef.current?.focus();
+  };
 
   const updateSearchValue = React.useCallback(
     debounce((str: string) => {
-      dispatch(setSearchValue(str))
-    }, 1000),
-    []
-  )
+      dispatch(setSearchValue(str));
+    }, 150),
+    [],
+  );
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
-    updateSearchValue(event.target.value)
-  }
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
+  };
 
   return (
     <div className={styles.root}>
       <svg
         className={styles.icon}
         enableBackground="new 0 0 32 32"
-        id="Editable-line"
+        id="EditableLine"
         version="1.1"
         viewBox="0 0 32 32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+        xmlns="http://www.w3.org/2000/svg">
         <circle
           cx="14"
           cy="14"
@@ -74,17 +74,11 @@ const Search: React.FC = () => {
         <svg
           onClick={onClickClear}
           className={styles.clearIcon}
-          height="48"
-          viewBox="0 0 48 48"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M38 12.83l-2.83-2.83-11.17 11.17-11.17-11.17-2.83 2.83 11.17 11.17-11.17 11.17 2.83 2.83 11.17-11.17 11.17 11.17 2.83-2.83-11.17-11.17z" />
-          <path d="M0 0h48v48h-48z" fill="none" />
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
         </svg>
       )}
     </div>
-  )
-}
-
-export default Search
+  );
+};
