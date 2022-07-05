@@ -1,6 +1,10 @@
 .root {
   position: relative;
-  left: -120px;
+  // left: -120px;
+  @media screen and (max-width: 600px) {
+    left: auto;
+    margin-top: 23px;
+  }
 }
 
 .input {
@@ -10,22 +14,23 @@
   width: 400px;
   border-radius: 10px;
   font-size: 16px;
-  transition: all 0.15s ease-in-out;
-  right: 15px;
-  margin-left: 100px;
 
   &:focus {
     border: 1px solid rgba(0, 0, 0, 0.2);
-  } 
+  }
 
-} 
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+ 
+}
 
 .icon {
-  width: 22;
+  width: 22px;
   height: 22px;
   opacity: 0.3;
   position: absolute;
-  left: 110px;
+  left: 14px;
   top: 12px;
 }
 
