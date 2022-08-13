@@ -2,15 +2,21 @@
 
 .header {
   border-bottom: 1px solid $gray-line;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  @media (max-width: 600px) {
+    padding-bottom: 0;
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 645px) {
+    @media (max-width: 1060px) {
       flex-direction: column;
+      row-gap: 20px;
 
       .header__cart {
         margin-top: 20px;

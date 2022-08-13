@@ -1,7 +1,6 @@
 .root {
   position: relative;
-  // left: -120px;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1060px) {
     left: auto;
     margin-top: 23px;
   }

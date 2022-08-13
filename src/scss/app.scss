@@ -22,7 +22,7 @@ body {
 }
 
 .content {
-  
+
   &__error-info {
     margin: 100px auto;
     width: 500px;
@@ -83,8 +83,8 @@ body {
 
       .sort {
         padding-left: 20px;
-        b {
-          display: none;
+        @media screen and (max-width: 821px) {
+          padding-left: 0;
         }
       }
     }
