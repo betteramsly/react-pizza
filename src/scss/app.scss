@@ -1,7 +1,7 @@
-@import './variables';
-@import './libs/normalize';
+@import "./variables";
+@import "./libs/normalize";
 
-@import './components/all';
+@import "./components/all";
 
 body {
   background-color: $background;
@@ -22,7 +22,6 @@ body {
 }
 
 .content {
-
   &__error-info {
     margin: 100px auto;
     width: 500px;
@@ -120,14 +119,12 @@ body {
   .imagePizza {
     margin-top: 30px;
   }
-  
-  @media  screen and (max-width: 600px) {
-    
-     .imagePizza {
+
+  @media screen and (max-width: 600px) {
+    .imagePizza {
       width: auto;
       max-height: 300px;
-    } 
-
+    }
   }
   &--cart {
     margin: auto;
@@ -233,7 +230,6 @@ body {
         height: 100px;
         @media screen and (max-width: 600px) {
         }
-
       }
     }
 
@@ -322,7 +318,6 @@ body {
 
       @media screen and (max-width: 600px) {
         justify-content: center;
-        
       }
 
       .button {
@@ -375,7 +370,7 @@ body {
       justify-content: space-between;
       margin-top: 40px;
 
-      @media  screen and (max-width: 600px) {
+      @media screen and (max-width: 600px) {
         gap: 10px;
         padding-bottom: 20px;
       }
